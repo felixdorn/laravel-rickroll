@@ -16,7 +16,7 @@ composer require felixdorn/laravel-rickroll
 ```
 
 ## Usage
-On your `routes/web.php` just add this single line and we'll handle the reset for you!
+On your `routes/web.php` just add this single line and we'll handle the rest for you!
 ```php
 use Felix\Rickroll\Facades\RickRoll;
 
@@ -46,7 +46,7 @@ RickRoll::routes([
 ```
 
 #### Using Regualar Expression Constraints
-You may contrain the format of your parameters using the `register` method.
+You may constrain the format of your parameters using the `register` method.
 > NOTE: The url is not added to the list of urls but directly registered through the router.
 
 ```php
@@ -98,10 +98,6 @@ Just listen for `Felix\RickRoll\RickRolled` in your `EventServiceProvider` .
 composer test
 ```
 
-### Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
@@ -118,7 +114,3 @@ If you discover any security related issues, please email hi@felixdorn.fr instea
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
