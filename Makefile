@@ -1,4 +1,4 @@
-.PHONY ci
+.PHONY: ci
 
 ci:
-    ./vendor/bin/phpunit
+	./vendor/bin/phpunit
