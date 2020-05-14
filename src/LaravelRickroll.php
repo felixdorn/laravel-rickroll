@@ -56,12 +56,14 @@ class LaravelRickroll
         Route::any($url, [$this, 'routeHandler'])->where($constraints);
     }
 
-    public function remove($url): bool
+    public function remove(...$urls): bool
     {
-        $this->urls = array_filter(
-            $this->urls,
-            is_callable($url) ? $url : fn($given) => $url !== $given
-        );
+        foreach ($urls as $url) {
+            $this->urls = array_filter(
+                $this->urls,
+                is_callable($url) ? $url : fn($given) => $url !== $given
+            );
+        }
 
         return false;
     }
