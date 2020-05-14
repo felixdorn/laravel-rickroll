@@ -52,6 +52,10 @@ class LaravelRickroll
         return $this;
     }
 
+    public function register(string $url, array $constraints = []) {
+        Route::any($url, [$this, 'routeHandler'])->where($constraints);
+    }
+
     public function remove($url): bool
     {
         $this->urls = array_filter(

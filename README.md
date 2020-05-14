@@ -35,7 +35,7 @@ RickRoll::routes([
 ```
 
 ### Adding custom urls
-We support every path that Laravel Router supports, and we plan to support Regular Expression Constraints, stay tuned!
+We support every path that Laravel Router supports.
 ```php
 use Felix\Rickroll\Facades\RickRoll;
 
@@ -43,6 +43,18 @@ RickRoll::routes([
     'urls' => [
         '/will/rickroll'
     ]
+]);
+```
+
+#### Using Regualar Expression Constraints
+You may contrain the format of your parameters using the `register` method.
+> NOTE: The url is not added to the list of urls but directly registered through the router.
+
+```php
+use Felix\Rickroll\Facades\RickRoll;
+
+RickRoll::register('/components/page-example-{id}', [
+    'id' => '[1-9]+'
 ]);
 ```
 
