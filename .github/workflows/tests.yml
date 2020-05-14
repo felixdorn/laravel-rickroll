@@ -16,6 +16,6 @@ jobs:
             - name: Install Composer dependencies
               run: composer install
             - name: Lint, test
-              run: make ci
+              run: ./vendor/bin/phpunit
             - name: Codecov
               uses: codecov/codecov-action@v1.0.6
