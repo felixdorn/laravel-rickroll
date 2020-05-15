@@ -4,15 +4,15 @@
 namespace Felix\RickRoll\Providers;
 
 
-use Felix\RickRoll\LaravelRickroll;
+use Felix\RickRoll\LaravelRickRoll;
 use Illuminate\Support\ServiceProvider;
 
 class RickRollProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         $this->app->singleton('laravel-rickroll', static function () {
-            return new LaravelRickroll();
+            return new LaravelRickRoll();
         });
     }
 }

@@ -8,7 +8,6 @@ Redirects people trying to break your site to Never Gonna Give You Up, from Rick
 
 
 ## Installation
-
 You can install the package via composer:
 
 ```bash
@@ -16,77 +15,19 @@ composer require felixdorn/laravel-rickroll
 ```
 
 ## Usage
-On your `routes/web.php` just add this single line and we'll handle the rest for you!
+On your `routes/web.php` just add this single line, and we'll handle the rest for you!
+
 ```php
 use Felix\Rickroll\Facades\RickRoll;
 
 RickRoll::routes();
 ```
 
-### Changing the video url
-If you want to redirect anywhere else on the web, you can do that too !
+### Redirecting to custom urls
 ```php
 use Felix\Rickroll\Facades\RickRoll;
 
-RickRoll::routes([
-    'redirects_to' => 'https://mycustom.url'
-]);
-```
-
-### Adding custom urls
-We support every path that Laravel Router supports.
-```php
-use Felix\Rickroll\Facades\RickRoll;
-
-RickRoll::routes([
-    'urls' => [
-        '/will/rickroll'
-    ]
-]);
-```
-
-#### Using Regualar Expression Constraints
-You may constrain the format of your parameters using the `register` method.
-> NOTE: The url is not added to the list of urls but directly registered through the router.
-
-```php
-use Felix\Rickroll\Facades\RickRoll;
-
-RickRoll::register('/components/page-example-{id}', [
-    'id' => '[1-9]+'
-]);
-```
-
-### Remove defaults urls
-If you only want custom urls, this is what you're looking for.
-```php
-use Felix\Rickroll\Facades\RickRoll;
-
-RickRoll::routes([
-    'use_defaults' => false
-]);
-```
-
-### Push an url
-```php
-use Felix\Rickroll\Facades\RickRoll;
-
-RickRoll::push('my-custom-url');
-```
-
-### Remove an url
-```php
-use Felix\Rickroll\Facades\RickRoll;
-
-RickRoll::remove('my-custom-url');
-``` 
-
-### List redirected urls
-```php
-use Felix\Rickroll\Facades\RickRoll;
-
-RickRoll::all();
-// returns an array with ['.env', ...]
+RickRoll::routes()->clear();
 ```
 
 ## Events

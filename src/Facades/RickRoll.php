@@ -2,16 +2,16 @@
 
 namespace Felix\Rickroll\Facades;
 
-use Felix\RickRoll\LaravelRickroll;
+use Felix\RickRoll\LaravelRickRoll;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static void routes(array $options = [])
- * @method static LaravelRickroll push(string ...$urls)
- * @method static LaravelRickroll remove(string ...$urls)
- * @method static array all()
- * @method static LaravelRickroll  removeDefaults()
- * @see LaravelRickroll
+ * @method static LaravelRickRoll routes(array $options = [])
+ * @method static LaravelRickRoll push(string ...$urls)
+ * @method static LaravelRickRoll remove(string ...$urls)
+ * @method static LaravelRickRoll clear()
+ * @method static LaravelRickRoll redirectsTo(string $url)
+ * @see LaravelRickRoll
  */
 class RickRoll extends Facade
 {
