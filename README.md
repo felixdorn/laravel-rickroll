@@ -9,7 +9,7 @@
         <img src="https://github.com/felixdorn/laravel-rickroll/workflows/CI/badge.svg?branch=master" alt="CI" />
        <img src="https://github.styleci.io/repos/264041666/shield?branch=master&style=flat" alt="StyleCI">
         <img src="https://img.shields.io/packagist/l/felixdorn/laravel-rickroll" alt="License" />
-        <img src="https://img.shields.io/packagist/v/felixdornf/laravel-rickroll" alt="Last Version" />
+        <img src="https://img.shields.io/packagist/v/felixdorn/laravel-rickroll" alt="Last Version" />
     </p>
 </p>
 
