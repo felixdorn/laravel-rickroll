@@ -48,9 +48,6 @@
     },
     "extra": {
         "laravel": {
-            "providers": [
-                "Felix\\RickRoll\\Providers\\RickRollProvider"
-            ],
             "aliases": {
                 "RickRoll": "Felix\\Rickroll\\Facades\\RickRoll"
             }

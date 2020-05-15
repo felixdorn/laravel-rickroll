@@ -23,6 +23,6 @@ class RickRoll extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'laravel-rickroll';
+        return new LaravelRickRoll;
     }
 }
