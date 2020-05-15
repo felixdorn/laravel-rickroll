@@ -42,8 +42,6 @@ class LaravelRickRoll
         }
 
         if (array_key_exists('urls', $options)) {
-
-
             $this->withUrls($options['urls']);
         }
 
