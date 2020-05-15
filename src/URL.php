@@ -65,7 +65,7 @@ class URL
             $this->redirectsTo = $redirectsTo;
         }
 
-        Route::any($this->url, [__CLASS__, 'handler']);
+        Route::any($this->url, fn (Request $request) => $this->handler($request));
     }
 
     /**
