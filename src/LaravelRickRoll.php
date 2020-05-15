@@ -36,12 +36,13 @@ class LaravelRickRoll
             $this->redirectsTo = $options['redirects_to'];
         }
 
-        if (array_key_exists('urls', $options)) {
-            $useDefaults = array_key_exists('use_defaults', $options) && $options['use_defaults'];
+        $useDefaults = array_key_exists('use_defaults', $options) && $options['use_defaults'];
+        if (! $useDefaults) {
+            $this->clear();
+        }
 
-            if (! $useDefaults) {
-                $this->clear();
-            }
+        if (array_key_exists('urls', $options)) {
+
 
             $this->withUrls($options['urls']);
         }

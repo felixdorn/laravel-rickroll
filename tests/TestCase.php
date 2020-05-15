@@ -7,8 +7,5 @@ use Orchestra\Testbench\TestCase as Base;
 
 class TestCase extends Base
 {
-    protected function getPackageProviders($app): array
-    {
-        return [RickRollProvider::class];
-    }
+
 }
