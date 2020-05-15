@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Felix\RickRoll;
-
 
 use Felix\RickRoll\Events\RickRolled;
 use Illuminate\Http\Request;
@@ -23,16 +21,17 @@ class URL
         $this->constraints = $constraints;
     }
 
-    public static function createFromURL(string $url): URL
+    public static function createFromURL(string $url): self
     {
         return new self($url);
     }
-    public static function createWithConstraints(string $url, array $constraints): URL
+
+    public static function createWithConstraints(string $url, array $constraints): self
     {
         return new self($url, $constraints);
     }
 
-    public function redirectsTo(string $url): URL
+    public function redirectsTo(string $url): self
     {
         $this->redirectsTo = $url;
 
@@ -41,7 +40,7 @@ class URL
 
     public function register(string $redirectsTo): void
     {
-        if (!$this->redirectsTo) {
+        if (! $this->redirectsTo) {
             $this->redirectsTo = $redirectsTo;
         }
 

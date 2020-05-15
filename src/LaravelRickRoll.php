@@ -5,13 +5,13 @@ namespace Felix\RickRoll;
 class LaravelRickRoll
 {
     /**
-     * The URL where the request is redirected
+     * The URL where the request is redirected.
      * @var string
      */
     public string $redirectsTo = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 
     /**
-     * List of urls that redirects to the $redirectsTo url
+     * List of urls that redirects to the $redirectsTo url.
      * @var array<int, URL|string>
      */
     public array $urls = [
@@ -20,7 +20,7 @@ class LaravelRickRoll
         'wp-login.php',
         'composer.lock',
         'yarn.lock',
-        'xmlrpc.php'
+        'xmlrpc.php',
     ];
 
     /**
@@ -30,7 +30,7 @@ class LaravelRickRoll
      * If used in combination of `use_defaults => false`, only these urls will be registered.
      * @param array $options
      */
-    public function routes(array $options = []): LaravelRickRoll
+    public function routes(array $options = []): self
     {
         if (array_key_exists('redirects_to', $options)) {
             $this->redirectsTo = $options['redirects_to'];
@@ -39,7 +39,7 @@ class LaravelRickRoll
         if (array_key_exists('urls', $options)) {
             $useDefaults = array_key_exists('use_defaults', $options) && $options['use_defaults'];
 
-            if (!$useDefaults) {
+            if (! $useDefaults) {
                 $this->clear();
             }
 
@@ -49,7 +49,7 @@ class LaravelRickRoll
         return $this;
     }
 
-    public function clear(): LaravelRickRoll
+    public function clear(): self
     {
         $this->urls = [];
 
@@ -60,7 +60,7 @@ class LaravelRickRoll
      * @param string|URL ...$urls
      * @return $this
      */
-    public function push(...$urls): LaravelRickRoll
+    public function push(...$urls): self
     {
         $this->urls = array_merge($this->urls, $urls);
 
@@ -72,7 +72,7 @@ class LaravelRickRoll
      * @param array $constraints
      * @return $this
      */
-    public function register(string $url, array $constraints = []): LaravelRickRoll
+    public function register(string $url, array $constraints = []): self
     {
         $this->urls[] = new URL($url, $constraints);
 
@@ -88,14 +88,14 @@ class LaravelRickRoll
         foreach ($urls as $url) {
             $this->urls = array_filter(
                 $this->urls,
-                is_callable($url) ? $url : fn($given) => $url !== $given
+                is_callable($url) ? $url : fn ($given) => $url !== $given
             );
         }
 
         return false;
     }
 
-    public function redirectsTo(string $url): LaravelRickRoll
+    public function redirectsTo(string $url): self
     {
         $this->redirectsTo = $url;
 

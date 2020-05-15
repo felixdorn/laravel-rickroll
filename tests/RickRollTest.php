@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Felix\RickRoll\Tests;
-
 
 use Felix\RickRoll\LaravelRickRoll;
 use PHPUnit\Framework\TestCase;
@@ -20,7 +18,7 @@ class RickRollTest extends TestCase
             'wp-login.php',
             'composer.lock',
             'yarn.lock',
-            'xmlrpc.php'
+            'xmlrpc.php',
         ], $rr->all());
     }
 
@@ -48,8 +46,7 @@ class RickRollTest extends TestCase
         $rr->clear()->push('.env', '.env.testing')->remove('.env');
 
         $this->assertEquals([
-            1 => '.env.testing'
+            1 => '.env.testing',
         ], $rr->all());
     }
-
 }
