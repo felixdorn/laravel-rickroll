@@ -1,15 +1,12 @@
 <?php
 
-
 namespace Felix\RickRoll\Exceptions;
-
 
 use Exception;
 use Felix\RickRoll\Events\RickRolled;
 use Felix\RickRoll\Facades\RickRoll;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
 
 class RenderableRickRoll extends Exception
 {

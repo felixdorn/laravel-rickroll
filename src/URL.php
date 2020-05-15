@@ -1,14 +1,10 @@
 <?php
 
-
 namespace Felix\RickRoll;
 
-
 use Felix\RickRoll\Events\RickRolled;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Route;
 
 class URL
@@ -32,7 +28,7 @@ class URL
      * @param string $url
      * @return URL
      */
-    public static function createFromURL(string $url): URL
+    public static function createFromURL(string $url): self
     {
         return new self($url);
     }
@@ -42,17 +38,17 @@ class URL
      * @param array $constraints
      * @return URL
      */
-    public static function createWithConstraints(string $url, array $constraints): URL
+    public static function createWithConstraints(string $url, array $constraints): self
     {
         return new self($url, $constraints);
     }
 
     /**
-     * Changes the redirection only for this url
+     * Changes the redirection only for this url.
      * @param string $url
      * @return $this
      */
-    public function redirectsTo(string $url): URL
+    public function redirectsTo(string $url): self
     {
         $this->redirectsTo = $url;
 
@@ -65,7 +61,7 @@ class URL
      */
     public function register(string $redirectsTo): void
     {
-        if (!$this->redirectsTo) {
+        if (! $this->redirectsTo) {
             $this->redirectsTo = $redirectsTo;
         }
 
@@ -82,7 +78,7 @@ class URL
 
         // not using the `redirect` helper for testing purposes
         return response(null, 301, [
-            'location' => $this->redirectsTo
+            'location' => $this->redirectsTo,
         ]);
     }
 
@@ -109,5 +105,4 @@ class URL
     {
         return $this->redirectsTo;
     }
-
 }

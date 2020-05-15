@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Felix\RickRoll\Tests;
-
 
 use Felix\RickRoll\LaravelRickRoll;
 use Felix\RickRoll\URL;
@@ -22,13 +20,14 @@ class LaravelRickRollTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_urls_through_the_routes_method() {
+    public function it_can_set_urls_through_the_routes_method()
+    {
         $rr = new LaravelRickRoll();
 
         $rr->routes([
             'redirects_to' => 'https://youtube.com',
             'use_defaults' => false,
-            'urls' => ['/some/thing']
+            'urls' => ['/some/thing'],
         ]);
 
         $this->assertEquals(['/some/thing'], $rr->getUrls());
@@ -43,7 +42,6 @@ class LaravelRickRollTest extends TestCase
             ->clear()
             ->push('/some/url')
             ->push('/some/{id}', ['id' => '[0-9]+']);
-
 
         $this->assertEquals([
             URL::createFromURL('/some/url'),
@@ -62,15 +60,15 @@ class LaravelRickRollTest extends TestCase
         $this->assertEquals([
             [
                 'uri' => 'some/url',
-                'methods' => Router::$verbs
+                'methods' => Router::$verbs,
             ],
             [
                 'uri' => 'some/{id}',
-                'methods' => Router::$verbs
+                'methods' => Router::$verbs,
             ],
             [
                 'uri' => 'some/thing',
-                'methods' => Router::$verbs
+                'methods' => Router::$verbs,
             ],
         ], $routes);
     }
@@ -91,15 +89,17 @@ class LaravelRickRollTest extends TestCase
     }
 
     /** @test */
-    public function it_can_remove_an_url() {
+    public function it_can_remove_an_url()
+    {
         $rr = new LaravelRickRoll();
         $this->assertContains('.env', $rr->getUrls());
         $rr->remove('.env');
-       $this->assertNotContains('.env', $rr->getUrls());
+        $this->assertNotContains('.env', $rr->getUrls());
     }
 
     /** @test */
-    public function it_can_remove_an_url_using_a_callable() {
+    public function it_can_remove_an_url_using_a_callable()
+    {
         $rr = new LaravelRickRoll();
         $this->assertNotEmpty($rr->getUrls());
         $rr->remove(static function ($url) {
