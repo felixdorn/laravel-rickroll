@@ -1,0 +1,59 @@
+{
+    "name": "felixdorn/laravel-rickroll",
+    "description": "Redirects people trying to break your site to Never Gonna Give You Up.",
+    "keywords": [
+        "felixdorn",
+        "laravel-rickroll"
+    ],
+    "homepage": "https://github.com/felixdorn/laravel-rickroll",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Félix Dorn",
+            "email": "hi@felixdorn.fr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/routing": "^7.11",
+        "illuminate/support": "^7"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^9.0",
+        "nunomaduro/larastan": "^0.5.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Felix\\RickRoll\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Felix\\RickRoll\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Felix\\RickRoll\\RickRollProvider"
+            ],
+            "aliases": {
+                "RickRoll": "Felix\\Rickroll\\RickRoll"
+            }
+        }
+    }
+}
