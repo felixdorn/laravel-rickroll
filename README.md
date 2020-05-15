@@ -17,7 +17,7 @@ Redirects people trying to break your site to Never Gonna Give You Up, from Rick
 
 
 ## Getting started
-You can install the package via composer, if you don't have composer, di:
+You can install the package via composer, if you don't have composer, you can download it [here](https://getcomposer.org):
 
 ```bash
 composer require felixdorn/laravel-rickroll
