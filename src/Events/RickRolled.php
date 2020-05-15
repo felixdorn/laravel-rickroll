@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Felix\RickRoll\Events;
-
 
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Http\Request;

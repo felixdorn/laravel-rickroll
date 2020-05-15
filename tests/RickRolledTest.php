@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Felix\RickRoll\Tests;
-
 
 use Felix\RickRoll\Events\RickRolled;
 use Illuminate\Http\Request;

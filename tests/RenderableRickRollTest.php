@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Felix\RickRoll\Tests;
-
 
 use Felix\RickRoll\Events\RickRolled;
 use Felix\RickRoll\Exceptions\RenderableRickRoll;
@@ -25,7 +23,8 @@ class RenderableRickRollTest extends TestCase
     }
 
     /** @test */
-    public function it_does_not_dispatch_the_event_when_disabled() {
+    public function it_does_not_dispatch_the_event_when_disabled()
+    {
         Event::fake();
 
         $exception = new RenderableRickRoll(false, 'custom.url');

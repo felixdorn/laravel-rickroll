@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Felix\RickRoll\Tests;
 
 use Felix\RickRoll\Events\RickRolled;
@@ -23,12 +22,12 @@ class URLTest extends TestCase
     public function it_can_create_an_url_with_constraints()
     {
         $url = URL::createWithConstraints('/rickrolled', [
-            'id' => '[0-9]+'
+            'id' => '[0-9]+',
         ]);
 
         $this->assertEquals('/rickrolled', $url->getUrl());
         $this->assertEquals([
-            'id' => '[0-9]+'
+            'id' => '[0-9]+',
         ], $url->getConstraints());
     }
 
