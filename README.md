@@ -33,7 +33,7 @@ Or by adding a requirement in your `composer.json` :
 
 
 ## We need your knowledge!
-Do you know any well-known url that "hackers" tries to break a site ?
+Do you know any well-known url that "hackers" try to break a site ?
 Add these [here](src/LaravelRickRoll.php) in the $urls array, and submit a PR, thanks! 
 
 
