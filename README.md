@@ -32,6 +32,11 @@ Or by adding a requirement in your `composer.json` :
 ```
 
 
+## We need your knowledge!
+Do you know any well-known url that "hackers" tries to break a site ?
+Add these [here](src/LaravelRickRoll.php) in the $urls array, and submit a PR, thanks! 
+
+
 ## Usage
 On your `routes/web.php` just add this single line, and we'll handle the rest for you!
 
@@ -71,16 +76,12 @@ There is a `rickroll` function available if you want to rickroll someone in one 
 ```php
 rickroll($dispatchEvent = true, 'https://my-custom.url');
 ```
-You don't need to return anything, it works just like a `abort`.
+You don't need to return anything, it works just like an `abort`.
 
 
 ### Events
 We're dispatching an event with the current request when someone is rick-rolled.
 Just listen for `Felix\RickRoll\Events\RickRolled` in your `EventServiceProvider` .
-
-## We need your knowledge!
-Do you know any well-known url that "hackers" tries to break a site ?
-Add these [here](src/LaravelRickRoll.php) in the $urls array, and submit a PR, thanks! 
 
 ## Testing
 ``` bash
