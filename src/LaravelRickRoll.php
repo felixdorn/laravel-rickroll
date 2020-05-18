@@ -16,10 +16,12 @@ class LaravelRickRoll
      */
     public array $urls = [
         '.env',
+        '.git',
         'wp-admin',
         'wp-login.php',
         'composer.lock',
         'yarn.lock',
+        'package-lock.json',
         'xmlrpc.php',
     ];
 
