@@ -46,14 +46,14 @@ use Felix\Rickroll\Facades\RickRoll;
 RickRoll::routes();
 ```
 
-### Redirecting to custom urls
+### Redirecting to a custom URL
 ```php
 use Felix\Rickroll\Facades\RickRoll;
 
 RickRoll::routes()->redirectsTo('https://mycustom.url');
 ```
 
-### Remove all urls
+### Remove all URLs
 ```php
 use Felix\Rickroll\Facades\RickRoll;
 
