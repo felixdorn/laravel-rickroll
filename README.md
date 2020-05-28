@@ -53,7 +53,7 @@ use Felix\Rickroll\Facades\RickRoll;
 RickRoll::routes()->redirectsTo('https://mycustom.url');
 ```
 
-### Remove url
+### Remove all urls
 ```php
 use Felix\Rickroll\Facades\RickRoll;
 
