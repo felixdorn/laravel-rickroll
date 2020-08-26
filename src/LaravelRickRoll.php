@@ -23,6 +23,7 @@ class LaravelRickRoll
         'yarn.lock',
         'package-lock.json',
         'xmlrpc.php',
+        'typo3',
     ];
 
     /**
