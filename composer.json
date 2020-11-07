@@ -17,8 +17,8 @@
     ],
     "require": {
         "php": "^7.4",
-        "illuminate/routing": "^7.11",
-        "illuminate/support": "^7"
+        "illuminate/routing": ">7.11",
+        "illuminate/support": ">7"
     },
     "require-dev": {
         "orchestra/testbench": "^5.0",
