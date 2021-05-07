@@ -20,15 +20,4 @@ class RenderableRickRollTest extends TestCase
 
         $this->assertEquals('https://custom.url', $response->getTargetUrl());
     }
-
-    /** @test */
-    public function it_does_not_dispatch_the_event_when_disabled()
-    {
-        Event::fake();
-
-        $exception = new RenderableRickRoll(false, 'custom.url');
-        $response = $exception->render(new Request());
-
-        Event::assertNotDispatched(RickRolled::class);
-    }
 }

@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 class RickRolledTest extends TestCase
 {
-    /** @test */
-    public function it_has_the_current_request(): void
+    public function test_it_has_the_current_request(): void
     {
         $event = new RickRolled(
             Request::create('/some/uri', 'PUT')

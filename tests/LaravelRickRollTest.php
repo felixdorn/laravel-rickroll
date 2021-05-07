@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 class LaravelRickRollTest extends TestCase
 {
-    /** @test */
-    public function it_can_clear_urls(): void
+    public function test_it_can_clear_urls(): void
     {
         $rr = new LaravelRickRoll();
         $this->assertNotEmpty($rr->getUrls());
@@ -19,8 +18,7 @@ class LaravelRickRollTest extends TestCase
         $this->assertEmpty($rr->getUrls());
     }
 
-    /** @test */
-    public function it_can_set_urls_through_the_routes_method()
+    public function test_it_can_set_urls_through_the_routes_method()
     {
         $rr = new LaravelRickRoll();
 
@@ -34,8 +32,7 @@ class LaravelRickRollTest extends TestCase
         $this->assertEquals('https://youtube.com', $rr->getRedirectURL());
     }
 
-    /** @test */
-    public function it_register_an_url_to_the_router(): void
+    public function test_it_register_an_url_to_the_router(): void
     {
         $rr = new LaravelRickRoll();
         $rr
@@ -73,23 +70,20 @@ class LaravelRickRollTest extends TestCase
         ], $routes);
     }
 
-    /** @test */
-    public function it_redirects_to_never_gonna_give_you_up(): void
+    public function test_it_redirects_to_never_gonna_give_you_up(): void
     {
         $this->assertEquals('https://www.youtube.com/watch?v=dQw4w9WgXcQ', (new LaravelRickRoll())->getRedirectURL());
     }
 
-    /** @test */
-    public function it_can_set_the_redirect_url(): void
+    public function test_it_can_set_the_redirect_url(): void
     {
         $rr = new LaravelRickRoll();
-        $this->it_redirects_to_never_gonna_give_you_up();
+        $this->test_it_redirects_to_never_gonna_give_you_up();
         $rr->redirectsTo('https://this.that');
         $this->assertEquals('https://this.that', $rr->getRedirectURL());
     }
 
-    /** @test */
-    public function it_can_remove_an_url()
+    public function test_it_can_remove_an_url()
     {
         $rr = new LaravelRickRoll();
         $this->assertContains('.env', $rr->getUrls());
@@ -97,8 +91,7 @@ class LaravelRickRollTest extends TestCase
         $this->assertNotContains('.env', $rr->getUrls());
     }
 
-    /** @test */
-    public function it_can_remove_an_url_using_a_callable()
+    public function test_it_can_remove_an_url_using_a_callable()
     {
         $rr = new LaravelRickRoll();
         $this->assertNotEmpty($rr->getUrls());
