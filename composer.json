@@ -17,13 +17,13 @@
     ],
     "require": {
         "php": "^8",
-        "illuminate/routing": "^8",
-        "illuminate/support": "^8"
+        "illuminate/routing": "^8.40",
+        "illuminate/support": "^8.40"
     },
     "require-dev": {
-        "orchestra/testbench": "^5.0",
-        "phpunit/phpunit": "^9.0",
-        "nunomaduro/larastan": "^0.5.8"
+        "orchestra/testbench": "^v6.0.0",
+        "phpunit/phpunit": "^9.5.4",
+        "nunomaduro/larastan": "^v0.7.5"
     },
     "autoload": {
         "psr-4": {

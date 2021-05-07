@@ -17,7 +17,7 @@ Redirects people trying to break your site to Never Gonna Give You Up, from Rick
 
 
 ## Getting started
-You can install the package via composer, if you don't have composer, you can download it [here](https://getcomposer.org):
+You can install the package via composer, if you don't have composer installed, you can download it [here](https://getcomposer.org):
 
 ```bash
 composer require felixdorn/laravel-rickroll
@@ -34,7 +34,7 @@ Or by adding a requirement in your `composer.json` :
 
 ## We need your knowledge!
 Do you know any well-known url that "hackers" try to break a site ?
-Add these [here](src/LaravelRickRoll.php) in the $urls array, and submit a PR, thanks! 
+Add these [here](src/LaravelRickRoll.php) in the $urls array, thanks! 
 
 
 ## Usage
@@ -74,7 +74,7 @@ RickRoll::routes()->push('/rickroll')
 There is a `rickroll` function available if you want to rickroll someone in one of your controllers.
 
 ```php
-rickroll($dispatchEvent = true, 'https://my-custom.url');
+rickroll('https://my-custom.url');
 ```
 You don't need to return anything, it works just like an `abort`.
 
