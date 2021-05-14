@@ -12,7 +12,7 @@
     </p>
 </p>
 
-Redirects people trying to break your site to Never Gonna Give You Up, from Rick Astley. This package is inspired by [Liam Hammett's tweet](https://twitter.com/LiamHammett/status/1260984553570570240).
+Rickrolls people trying to break your site. This package is inspired by [Liam Hammett's tweet](https://twitter.com/LiamHammett/status/1260984553570570240).
 
 
 ## Getting started
