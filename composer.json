@@ -1,6 +1,6 @@
 {
     "name": "felixdorn/laravel-rickroll",
-    "description": "Redirects people trying to break your site to Never Gonna Give You Up.",
+    "description": "Rickrolls people trying to break your site.",
     "keywords": [
         "felixdorn",
         "laravel-rickroll"
