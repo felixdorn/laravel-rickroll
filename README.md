@@ -32,8 +32,8 @@ Or by adding a requirement in your `composer.json` :
 
 
 ## We need your knowledge!
-Do you know any well-known url that "hackers" try to break a site ?
-Add these [here](src/LaravelRickRoll.php) in the $urls array, thanks! 
+Do you know any well-known url that "hackers" use to gather information/secrets ?
+Add these [here](src/LaravelRickRoll.php), thanks! 
 
 
 ## Usage
