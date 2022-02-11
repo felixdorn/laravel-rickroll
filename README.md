@@ -1,4 +1,5 @@
 <img src="https://res.cloudinary.com/dy3jxhiba/image/upload/v1589534220/Screenshot_from_2020-05-15_11-12-52_1_hlj5aj.png" width="150" alt="Rick Astley in Never Gonna Give You UP">
+
 # RickRoll for Laravel
 
 [![Tests](https://github.com/felixdorn/laravel-rickroll/actions/workflows/tests.yml/badge.svg)](https://github.com/felixdorn/laravel-rickroll/actions/workflows/tests.yml)
