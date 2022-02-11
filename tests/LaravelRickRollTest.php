@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 class LaravelRickRollTest extends TestCase
 {
-    public function test_it_can_clear_urls(): void
+    public function testItCanClearUrls(): void
     {
         $rr = new LaravelRickRoll();
         $this->assertNotEmpty($rr->getUrls());
@@ -18,21 +18,21 @@ class LaravelRickRollTest extends TestCase
         $this->assertEmpty($rr->getUrls());
     }
 
-    public function test_it_can_set_urls_through_the_routes_method()
+    public function testItCanSetUrlsThroughTheRoutesMethod()
     {
         $rr = new LaravelRickRoll();
 
         $rr->routes([
             'redirects_to' => 'https://youtube.com',
             'use_defaults' => false,
-            'urls' => ['/some/thing'],
+            'urls'         => ['/some/thing'],
         ]);
 
         $this->assertEquals(['/some/thing'], $rr->getUrls());
         $this->assertEquals('https://youtube.com', $rr->getRedirectURL());
     }
 
-    public function test_it_register_an_url_to_the_router(): void
+    public function testItRegisterAnUrlToTheRouter(): void
     {
         $rr = new LaravelRickRoll();
         $rr
@@ -56,34 +56,34 @@ class LaravelRickRollTest extends TestCase
 
         $this->assertEquals([
             [
-                'uri' => 'some/url',
+                'uri'     => 'some/url',
                 'methods' => Router::$verbs,
             ],
             [
-                'uri' => 'some/{id}',
+                'uri'     => 'some/{id}',
                 'methods' => Router::$verbs,
             ],
             [
-                'uri' => 'some/thing',
+                'uri'     => 'some/thing',
                 'methods' => Router::$verbs,
             ],
         ], $routes);
     }
 
-    public function test_it_redirects_to_never_gonna_give_you_up(): void
+    public function testItRedirectsToNeverGonnaGiveYouUp(): void
     {
         $this->assertEquals('https://www.youtube.com/watch?v=dQw4w9WgXcQ', (new LaravelRickRoll())->getRedirectURL());
     }
 
-    public function test_it_can_set_the_redirect_url(): void
+    public function testItCanSetTheRedirectUrl(): void
     {
         $rr = new LaravelRickRoll();
-        $this->test_it_redirects_to_never_gonna_give_you_up();
+        $this->testItRedirectsToNeverGonnaGiveYouUp();
         $rr->redirectsTo('https://this.that');
         $this->assertEquals('https://this.that', $rr->getRedirectURL());
     }
 
-    public function test_it_can_remove_an_url()
+    public function testItCanRemoveAnUrl()
     {
         $rr = new LaravelRickRoll();
         $this->assertContains('.env', $rr->getUrls());
@@ -91,7 +91,7 @@ class LaravelRickRollTest extends TestCase
         $this->assertNotContains('.env', $rr->getUrls());
     }
 
-    public function test_it_can_remove_an_url_using_a_callable()
+    public function testItCanRemoveAnUrlUsingACallable()
     {
         $rr = new LaravelRickRoll();
         $this->assertNotEmpty($rr->getUrls());

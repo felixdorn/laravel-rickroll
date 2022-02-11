@@ -6,12 +6,12 @@ class LaravelRickRoll
 {
     /**
      * The URL where the request is redirected.
-     * @var string
      */
     protected string $redirectsTo = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 
     /**
      * List of urls that redirects to Never Gonna Give You Up.
+     *
      * @var array<int, URL|string>
      */
     public array $urls = [
@@ -31,7 +31,6 @@ class LaravelRickRoll
      * redirects_to, changes the url where request are rick-rolled
      * urls, a list of url to append
      * If used in combination of `use_defaults => false`, only these urls will be registered.
-     * @param array $options
      */
     public function routes(array $options = []): self
     {
@@ -40,7 +39,7 @@ class LaravelRickRoll
         }
 
         $useDefaults = array_key_exists('use_defaults', $options) && $options['use_defaults'];
-        if (! $useDefaults) {
+        if (!$useDefaults) {
             $this->clear();
         }
 
@@ -53,6 +52,7 @@ class LaravelRickRoll
 
     /**
      * Clears all urls.
+     *
      * @return $this
      */
     public function clear(): self
@@ -64,8 +64,7 @@ class LaravelRickRoll
 
     /**
      * Register an url.
-     * @param string $url
-     * @param array $constraints
+     *
      * @return $this
      */
     public function push(string $url, array $constraints = []): self
@@ -78,8 +77,8 @@ class LaravelRickRoll
     /**
      * Remove one or more urls from the list
      * If a callable is the provided then we filter the array using this callable.
+     *
      * @param string|URL|callable ...$urls
-     * @return bool
      */
     public function remove(...$urls): bool
     {
@@ -95,7 +94,7 @@ class LaravelRickRoll
 
     /**
      * Sets the redirection url.
-     * @param string $url
+     *
      * @return $this
      */
     public function redirectsTo(string $url): self
@@ -122,16 +121,12 @@ class LaravelRickRoll
 
     /**
      * Returns the redirect url.
-     * @return string
      */
     public function getRedirectURL(): string
     {
         return $this->redirectsTo;
     }
 
-    /**
-     * @return array
-     */
     public function getUrls(): array
     {
         return $this->urls;

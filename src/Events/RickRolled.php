@@ -9,9 +9,6 @@ class RickRolled
 {
     use Dispatchable;
 
-    /**
-     * @var Request
-     */
     public Request $request;
 
     public function __construct(Request $request)

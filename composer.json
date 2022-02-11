@@ -17,13 +17,14 @@
     ],
     "require": {
         "php": "^8",
-        "illuminate/routing": "^8.40",
-        "illuminate/support": "^8.40"
+        "illuminate/routing": "^8|^9",
+        "illuminate/support": "^8|^9"
     },
     "require-dev": {
-        "orchestra/testbench": "^v6.0.0",
-        "phpunit/phpunit": "^9.5.4",
-        "nunomaduro/larastan": "^v0.7.5"
+        "orchestra/testbench": "^6|^7",
+        "friendsofphp/php-cs-fixer": "^3.6",
+        "phpunit/phpunit": "^8|^9",
+        "phpstan/phpstan": "^1.4.6"
     },
     "autoload": {
         "psr-4": {
@@ -39,9 +40,23 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
+        "lint": "php-cs-fixer fix -v",
+        "test:lint": "php-cs-fixer fix -v --dry-run",
+        "test:types": "phpstan analyse --ansi --memory-limit=-1",
+        "test:unit": "phpunit",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ],
+        "test:9x": [
+            "composer require orchestra/testbench:^7 --no-interaction --dev --no-update",
+            "@test"
+        ],
+        "test:8x": [
+            "composer require orchestra/testbench:^6 --no-interaction --dev --no-update",
+            "@test"
+        ]
     },
     "config": {
         "sort-packages": true

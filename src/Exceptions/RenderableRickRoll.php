@@ -19,6 +19,7 @@ class RenderableRickRoll extends Exception
     {
         event(new RickRolled($request));
 
-        return redirect($this->redirectTo ?? RickRoll::getRedirectURL());
+        /* @phpstan-ignore-next-line */
+        return redirect()->away($this->redirectTo ?? RickRoll::getRedirectURL());
     }
 }

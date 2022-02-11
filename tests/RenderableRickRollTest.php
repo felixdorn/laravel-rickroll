@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Event;
 
 class RenderableRickRollTest extends TestCase
 {
-    public function test_it_dispatches_the_event(): void
+    public function testItDispatchesTheEvent(): void
     {
         Event::fake();
         $exception = new RenderableRickRoll('https://custom.url');
-        $response = $exception->render(new Request());
+        $response  = $exception->render(new Request());
         Event::assertDispatched(RickRolled::class, static function (RickRolled $event) {
             return $event->request instanceof Request;
         });

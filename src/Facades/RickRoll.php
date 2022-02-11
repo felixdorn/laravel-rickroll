@@ -7,24 +7,20 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static LaravelRickRoll routes(array $options = [])
- * @method static LaravelRickRoll push(string $url, array $constraits = [])
+ * @method static LaravelRickRoll push(string $url, array $constraints = [])
  * @method static LaravelRickRoll remove(string ...$urls)
  * @method static LaravelRickRoll clear()
  * @method static LaravelRickRoll redirectsTo(string $url)
  * @method static array getUrls()
  * @method static array withUrls()
  * @method static string getRedirectURL()
+ *
  * @see LaravelRickRoll
  */
 class RickRoll extends Facade
 {
-    /**
-     * Get the registered name of the component.
-     *
-     * @return string
-     */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
-        return new LaravelRickRoll;
+        return LaravelRickRoll::class;
     }
 }

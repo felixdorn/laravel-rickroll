@@ -6,7 +6,7 @@ use Felix\RickRoll\Exceptions\RenderableRickRoll;
 
 class HelperTest extends TestCase
 {
-    public function test_it_throws_a_renderable_rickroll_exception()
+    public function testItThrowsARenderableRickrollException()
     {
         $this->expectException(RenderableRickRoll::class);
         rickroll();
