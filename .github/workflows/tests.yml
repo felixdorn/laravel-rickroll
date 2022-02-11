@@ -35,7 +35,7 @@ jobs:
 
             - name: Install Composer dependencies
               run: |
-                  composer require orchestra:testbench:^${{ matrix.testbench }} --dev --no-interaction --prefer-dist
+                  composer require orchestra/testbench:^${{ matrix.testbench }} --dev --no-interaction --prefer-dist
                   composer update --${{ matrix.dependency-version }} --no-interaction --prefer-dist
 
             - name: Integration Tests
