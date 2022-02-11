@@ -13,7 +13,7 @@ jobs:
                 testbench: [6, 7]
                 dependency-version: [prefer-stable]
 
-        name: Tests PHP${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
+        name: Tests PHP${{ matrix.php }} - ${{ matrix.os }} - TestBench ${{ matrix.testbench }}
 
         steps:
 
