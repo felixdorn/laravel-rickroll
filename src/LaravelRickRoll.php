@@ -34,16 +34,15 @@ class LaravelRickRoll
      */
     public function routes(array $options = []): self
     {
-        if (array_key_exists('redirects_to', $options)) {
+        if (isset($options['redirects_to'])) {
             $this->redirectsTo = $options['redirects_to'];
         }
 
-        $useDefaults = array_key_exists('use_defaults', $options) && $options['use_defaults'];
-        if (!$useDefaults) {
+        if (isset($options['use_defaults']) && $options['use_defaults'] === false) {
             $this->clear();
         }
 
-        if (array_key_exists('urls', $options)) {
+        if (isset($options['urls'])) {
             $this->withUrls($options['urls']);
         }
 

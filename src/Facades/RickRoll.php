@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Facade;
  */
 class RickRoll extends Facade
 {
-    protected static function getFacadeAccessor()
+    public static function getFacadeRoot(): LaravelRickRoll
     {
         return new LaravelRickRoll();
     }

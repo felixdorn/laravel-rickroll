@@ -8,6 +8,5 @@ class RickRollServiceProvider extends ServiceProvider
 {
     public function register()
     {
-       //
     }
 }
