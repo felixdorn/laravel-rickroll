@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Facade;
  */
 class RickRoll extends Facade
 {
-    protected static function getFacadeAccessor(): string
+    protected static function getFacadeAccessor()
     {
-        return LaravelRickRoll::class;
+        return new LaravelRickRoll();
     }
 }
