@@ -24,6 +24,7 @@ class LaravelRickRoll
         'package-lock.json',
         'xmlrpc.php',
         'typo3',
+        '.aws',
     ];
 
     /**
