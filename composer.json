@@ -17,11 +17,11 @@
     ],
     "require": {
         "php": "^8",
-        "illuminate/routing": "^8|^9",
-        "illuminate/support": "^8|^9"
+        "illuminate/routing": "^8|^9|^10",
+        "illuminate/support": "^8|^9|^10"
     },
     "require-dev": {
-        "orchestra/testbench": "^6|^7",
+        "orchestra/testbench": "^6|^7|^8",
         "friendsofphp/php-cs-fixer": "^3.6",
         "phpunit/phpunit": "^8|^9",
         "phpstan/phpstan": "^1.4.6"
